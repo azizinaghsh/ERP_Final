@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "243C5B545A0EBEF9D0E88E338F1181ED758D07A8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F7F4990CB6B89749BAA77A36BB4F5167C7E5393A" : 0,
+    "243C5B545A0EBEF9D0E88E338F1181ED758D07A8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9F800570-314F-469C-945C-FE93175EDAE6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F7F4990CB6B89749BAA77A36BB4F5167C7E5393A" : "",
+    "243C5B545A0EBEF9D0E88E338F1181ED758D07A8" : "ERP_Models\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ERP_Models",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ERP_Models.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/husseinhoo\/ERP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "243C5B545A0EBEF9D0E88E338F1181ED758D07A8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/husseinhoo\/ERP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F7F4990CB6B89749BAA77A36BB4F5167C7E5393A"
+    }
+  ]
+}

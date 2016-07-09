@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="Allocation" representedClassName=".AllocationEntity" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="createdAt" attributeType="String" syncable="YES"/>
+        <attribute name="estimatedUseDuration" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="releaseTime" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="myProject" maxCount="1" deletionRule="Nullify" destinationEntity="ProjectHierarchy" inverseName="totalAllocations" inverseEntity="ProjectHierarchy" syncable="YES"/>
+        <relationship name="myResource" maxCount="1" deletionRule="Nullify" destinationEntity="Resource" inverseName="allocations" inverseEntity="Resource" syncable="YES"/>
+    </entity>
+    <entity name="FinancialResource" representedClassName=".FinancialResourceEntity" parentEntity="QuantitativeResource" syncable="YES">
+        <relationship name="myCategory" maxCount="1" deletionRule="Nullify" destinationEntity="FinancialResourceCategories" inverseName="financialResources" inverseEntity="FinancialResourceCategories" syncable="YES"/>
+    </entity>
+    <entity name="FinancialResourceCategories" representedClassName=".FinancialResourceCategoriesEntity" syncable="YES">
+        <attribute name="category" attributeType="String" syncable="YES"/>
+        <relationship name="financialResources" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FinancialResource" inverseName="myCategory" inverseEntity="FinancialResource" syncable="YES"/>
+    </entity>
+    <entity name="HumanResource" representedClassName=".HumanResourceEntity" parentEntity="QuantitativeResource" syncable="YES">
+        <relationship name="myCategory" maxCount="1" deletionRule="Nullify" destinationEntity="HumanResourceCategories" inverseName="humanResources" inverseEntity="HumanResourceCategories" syncable="YES"/>
+        <relationship name="myMaintenances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Maintenance" inverseName="maintainers" inverseEntity="Maintenance" syncable="YES"/>
+        <relationship name="myModules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Module" inverseName="creators" inverseEntity="Module" syncable="YES"/>
+    </entity>
+    <entity name="HumanResourceCategories" representedClassName=".HumanResourceCategoriesEntity" syncable="YES">
+        <attribute name="category" attributeType="String" syncable="YES"/>
+        <relationship name="humanResources" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HumanResource" inverseName="myCategory" inverseEntity="HumanResource" syncable="YES"/>
+    </entity>
+    <entity name="InformationResource" representedClassName=".InformationResourceEntity" parentEntity="Resource" syncable="YES">
+        <relationship name="myCategory" maxCount="1" deletionRule="Nullify" destinationEntity="InformationResourceCategories" inverseName="informationResources" inverseEntity="InformationResourceCategories" syncable="YES"/>
+    </entity>
+    <entity name="InformationResourceCategories" representedClassName=".InformationResourceCategoriesEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="informationResources" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InformationResource" inverseName="myCategory" inverseEntity="InformationResource" syncable="YES"/>
+    </entity>
+    <entity name="Maintenance" representedClassName=".MaintenanceEntity" syncable="YES">
+        <attribute name="describe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modificationDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="maintainers" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="HumanResource" inverseName="myMaintenances" inverseEntity="HumanResource" syncable="YES"/>
+        <relationship name="myModule" maxCount="1" deletionRule="Nullify" destinationEntity="Module" inverseName="maintenances" inverseEntity="Module" syncable="YES"/>
+    </entity>
+    <entity name="Module" representedClassName=".ModuleEntity" parentEntity="InformationResource" syncable="YES">
+        <attribute name="moduleDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="creators" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="HumanResource" inverseName="myModules" inverseEntity="HumanResource" syncable="YES"/>
+        <relationship name="maintenances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Maintenance" inverseName="myModule" inverseEntity="Maintenance" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProjectHierarchy" inverseName="products" inverseEntity="ProjectHierarchy" syncable="YES"/>
+    </entity>
+    <entity name="Permission" representedClassName=".PermissionEntity" syncable="YES">
+        <attribute name="can_create_project" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="can_create_requirement" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="can_create_resource" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="can_create_user" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="myUsers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="myPermission" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="PhysicalResource" representedClassName=".PhysicalResourceEntity" parentEntity="Resource" syncable="YES">
+        <attribute name="resourceCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roomNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="myCategory" maxCount="1" deletionRule="Nullify" destinationEntity="PhysicalResourceCategories" inverseName="physicalResources" inverseEntity="PhysicalResourceCategories" syncable="YES"/>
+    </entity>
+    <entity name="PhysicalResourceCategories" representedClassName=".PhysicalResourceCategoriesEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="physicalResources" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PhysicalResource" inverseName="myCategory" inverseEntity="PhysicalResource" syncable="YES"/>
+    </entity>
+    <entity name="Project" representedClassName=".ProjectEntity" parentEntity="ProjectHierarchy" syncable="YES">
+        <attribute name="budgetLimit" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="humanResourceLmit" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="manager" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="myProjects" inverseEntity="User" syncable="YES"/>
+        <relationship name="myCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProjectCategories" inverseName="projects" inverseEntity="ProjectCategories" syncable="YES"/>
+    </entity>
+    <entity name="ProjectCategories" representedClassName=".ProjectCategoriesEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="myCategory" inverseEntity="Project" syncable="YES"/>
+    </entity>
+    <entity name="ProjectHierarchy" representedClassName=".ProjectHierarchyEntity" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="projectDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="projectName" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" attributeType="String" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Module" inverseName="product" inverseEntity="Module" syncable="YES"/>
+        <relationship name="requirements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Requirement" inverseName="myProject" inverseEntity="Requirement" syncable="YES"/>
+        <relationship name="subProjects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProjectHierarchy" inverseName="subProjects" inverseEntity="ProjectHierarchy" syncable="YES"/>
+        <relationship name="totalAllocations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Allocation" inverseName="myProject" inverseEntity="Allocation" syncable="YES"/>
+    </entity>
+    <entity name="QuantitativeResource" representedClassName=".QuantitativeResourceEntity" isAbstract="YES" parentEntity="Resource" syncable="YES">
+        <attribute name="allocatedAmount" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalAmount" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Requirement" representedClassName=".RequirementEntity" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="createdAt" attributeType="String" syncable="YES"/>
+        <attribute name="estimatedUseDuration" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="myProject" maxCount="1" deletionRule="Nullify" destinationEntity="ProjectHierarchy" inverseName="requirements" inverseEntity="ProjectHierarchy" syncable="YES"/>
+        <relationship name="myResource" maxCount="1" deletionRule="Nullify" destinationEntity="Resource" inverseName="requirements" inverseEntity="Resource" syncable="YES"/>
+    </entity>
+    <entity name="Resource" representedClassName=".ResourceEntity" isAbstract="YES" syncable="YES">
+        <attribute name="dateAdded" attributeType="String" syncable="YES"/>
+        <attribute name="estimatedTimeUse" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="allocations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Allocation" inverseName="myResource" inverseEntity="Allocation" syncable="YES"/>
+        <relationship name="requirements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Requirement" inverseName="myResource" inverseEntity="Requirement" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="UserEntity" syncable="YES">
+        <attribute name="fname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="myPermission" maxCount="1" deletionRule="Cascade" destinationEntity="Permission" inverseName="myUsers" inverseEntity="Permission" syncable="YES"/>
+        <relationship name="myProjects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="manager" inverseEntity="Project" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Allocation" positionX="-4196" positionY="-504" width="128" height="148"/>
+        <element name="FinancialResource" positionX="-4799" positionY="-549" width="128" height="58"/>
+        <element name="FinancialResourceCategories" positionX="-4869" positionY="-396" width="128" height="73"/>
+        <element name="HumanResource" positionX="-5060" positionY="-288" width="128" height="88"/>
+        <element name="HumanResourceCategories" positionX="-4745" positionY="-261" width="128" height="73"/>
+        <element name="InformationResource" positionX="-5022" positionY="-81" width="128" height="58"/>
+        <element name="InformationResourceCategories" positionX="-4761" positionY="-111" width="128" height="73"/>
+        <element name="Maintenance" positionX="-4590" positionY="-201" width="128" height="118"/>
+        <element name="Module" positionX="-4365" positionY="63" width="128" height="105"/>
+        <element name="Permission" positionX="-3764" positionY="-396" width="128" height="133"/>
+        <element name="PhysicalResource" positionX="-4583" positionY="-27" width="128" height="88"/>
+        <element name="PhysicalResourceCategories" positionX="-4581" positionY="141" width="128" height="73"/>
+        <element name="Project" positionX="-4061" positionY="-339" width="128" height="105"/>
+        <element name="ProjectCategories" positionX="-4160" positionY="33" width="128" height="75"/>
+        <element name="ProjectHierarchy" positionX="-4626" positionY="-567" width="128" height="165"/>
+        <element name="QuantitativeResource" positionX="-4635" positionY="-318" width="128" height="73"/>
+        <element name="Requirement" positionX="-3944" positionY="-129" width="128" height="30"/>
+        <element name="Resource" positionX="-4419" positionY="-306" width="128" height="30"/>
+        <element name="User" positionX="-3933" positionY="-279" width="108" height="30"/>
+    </elements>
+</model>
