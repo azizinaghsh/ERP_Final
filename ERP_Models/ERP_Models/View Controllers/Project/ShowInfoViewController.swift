@@ -46,6 +46,7 @@ class ShowInfoViewController: NSViewController {
     @IBOutlet weak var creatorLabel: NSTextField!
     
     @IBOutlet weak var creatorValueLabel: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -72,11 +73,11 @@ class ShowInfoViewController: NSViewController {
                 managerLabel.hidden = false
                 humanResourceLimitLabel.hidden = false
                 startDateLabel.hidden = false
-                budgetLimitLabel.hidden = false
+                budgetLimitLabel.hidden = true
                 
                 projectTitleLabel.hidden = false
                 projectHumanResourceLimit.hidden = false
-                projectBudgetLimit.hidden = false
+                projectBudgetLimit.hidden = true
                 
                 let manager = selectedItem!.projectManager
                 let humanLimit = selectedItem!.humanResourceLimit
@@ -105,8 +106,8 @@ class ShowInfoViewController: NSViewController {
             startDateLabel.hidden = true
             budgetLimitLabel.hidden = true
             
-            categoryLabel.hidden = false
-            categoryValueLabel.hidden = false
+            
+            
             
             creatorLabel.hidden = false
             creatorValueLabel.hidden = false
@@ -138,8 +139,9 @@ class ShowInfoViewController: NSViewController {
             let date = selectedRequirementItem?.createdAt
             startDateLabel.stringValue = date! as String
             
-            let desc = selectedRequirementItem?.estimatedUseDuration
-            projectDesciptionText.integerValue = desc!
+            let desc = " برای" + String(selectedRequirementItem!.estimatedUseDuration)
+                + " روز لازم است."
+            projectDesciptionText.stringValue = desc
         
         }
         

@@ -767,16 +767,6 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="520" height="310"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6YE-eP-O7G">
-                                <rect key="frame" x="21" y="277" width="58" height="32"/>
-                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSUser" imagePosition="overlaps" alignment="right" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f0c-M2-lIb">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".GeezaProInterface"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="Wed-Yi-pQy" kind="sheet" id="KXO-Gl-0CK"/>
-                                </connections>
-                            </button>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="0LW-hB-SqV">
                                 <rect key="frame" x="0.0" y="0.0" width="520" height="310"/>
                                 <connections>
@@ -791,9 +781,6 @@ Gw
                             <constraint firstAttribute="bottom" secondItem="0LW-hB-SqV" secondAttribute="bottom" id="kEU-L0-ERe"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="loginButton" destination="6YE-eP-O7G" id="SDv-H7-JfR"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1002,7 +989,7 @@ DQ
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.35709505057377089" horizontal="YES" id="Wcv-p7-xLz">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.33333333333333331" horizontal="YES" id="Wcv-p7-xLz">
                                     <rect key="frame" x="1" y="195" width="149" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1214,7 +1201,245 @@ DQ
                 </viewController>
                 <customObject id="iOv-EC-tKl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="1077"/>
+            <point key="canvasLocation" x="1540" y="1030"/>
+        </scene>
+        <!--Resource Search View Controller-->
+        <scene sceneID="wj7-u8-ibA">
+            <objects>
+                <viewController id="lKg-CO-3bn" customClass="ResourceSearchViewController" customModule="ERP_Models" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="WmE-S0-upm">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kk-e3-lA2">
+                                <rect key="frame" x="138" y="56" width="75" height="32"/>
+                                <buttonCell key="cell" type="push" title="جستجو" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lX7-C0-T6a">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".GeezaProInterface"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="searchButtonPressed:" target="lKg-CO-3bn" id="Yzf-j8-OaR"/>
+                                </connections>
+                            </button>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9n0-DX-8J1">
+                                <rect key="frame" x="0.0" y="95" width="350" height="105"/>
+                                <clipView key="contentView" ambiguous="YES" id="hQk-GD-3ER">
+                                    <rect key="frame" x="1" y="1" width="348" height="103"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <predicateEditor verticalHuggingPriority="750" ambiguous="YES" nestingMode="compound" canRemoveAllRows="YES" rowHeight="25" id="86f-2N-wmp">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <rowTemplates>
+                                                <predicateEditorRowTemplate rowType="compound" id="LCC-ME-2jH">
+                                                    <popUpMenus>
+                                                        <menu id="yt0-bL-9XX">
+                                                            <items>
+                                                                <menuItem title="Any" state="on" id="wbU-Mc-Br7">
+                                                                    <integer key="representedObject" value="2"/>
+                                                                </menuItem>
+                                                                <menuItem title="All" id="Rl4-53-6Dp">
+                                                                    <integer key="representedObject" value="1"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                        <menu id="lil-mH-mkZ">
+                                                            <items>
+                                                                <menuItem title="of the following are true" state="on" id="JKh-oC-ppY"/>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpMenus>
+                                                </predicateEditorRowTemplate>
+                                                <predicateEditorRowTemplate rowType="simple" id="JOh-0k-UTF">
+                                                    <array key="leftExpressionObject">
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">name</string>
+                                                        </expression>
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">address</string>
+                                                        </expression>
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">sign</string>
+                                                        </expression>
+                                                    </array>
+                                                    <integer key="rightExpressionObject" value="700"/>
+                                                    <popUpMenus>
+                                                        <menu id="kJg-0b-Nxc">
+                                                            <items>
+                                                                <menuItem title="name" state="on" id="tsx-2B-2LG">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">name</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                                <menuItem title="address" id="uFt-TT-x7N">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">address</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                                <menuItem title="sign" id="a8o-7h-rPv">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">sign</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                        <menu id="hyM-TG-zKs">
+                                                            <items>
+                                                                <menuItem title="contains" state="on" id="xEm-Ew-GRx">
+                                                                    <integer key="representedObject" value="99"/>
+                                                                </menuItem>
+                                                                <menuItem title="begins with" id="7cv-f1-fBm">
+                                                                    <integer key="representedObject" value="8"/>
+                                                                </menuItem>
+                                                                <menuItem title="ends with" id="nqh-ue-TZH">
+                                                                    <integer key="representedObject" value="9"/>
+                                                                </menuItem>
+                                                                <menuItem title="is" id="iRg-4G-pba">
+                                                                    <integer key="representedObject" value="4"/>
+                                                                </menuItem>
+                                                                <menuItem title="is not" id="ABj-iV-qUc">
+                                                                    <integer key="representedObject" value="5"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpMenus>
+                                                </predicateEditorRowTemplate>
+                                                <predicateEditorRowTemplate rowType="simple" id="5XU-tZ-brA">
+                                                    <array key="leftExpressionObject">
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">name</string>
+                                                        </expression>
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">address</string>
+                                                        </expression>
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">sign</string>
+                                                        </expression>
+                                                    </array>
+                                                    <integer key="rightExpressionObject" value="700"/>
+                                                    <popUpMenus>
+                                                        <menu id="gDY-xM-I3h">
+                                                            <items>
+                                                                <menuItem title="name" state="on" id="lTr-Qa-qj8">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">name</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                                <menuItem title="address" id="9Ro-h7-AQI">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">address</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                                <menuItem title="sign" id="neV-b5-ns6">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">sign</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                        <menu id="72a-5R-Jxj">
+                                                            <items>
+                                                                <menuItem title="contains" state="on" id="thC-oT-Qev">
+                                                                    <integer key="representedObject" value="99"/>
+                                                                </menuItem>
+                                                                <menuItem title="begins with" id="h4J-Hg-iTO">
+                                                                    <integer key="representedObject" value="8"/>
+                                                                </menuItem>
+                                                                <menuItem title="ends with" id="Gm7-wj-J3y">
+                                                                    <integer key="representedObject" value="9"/>
+                                                                </menuItem>
+                                                                <menuItem title="is" id="MCR-g0-E6q">
+                                                                    <integer key="representedObject" value="4"/>
+                                                                </menuItem>
+                                                                <menuItem title="is not" id="1iB-a1-LMe">
+                                                                    <integer key="representedObject" value="5"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpMenus>
+                                                </predicateEditorRowTemplate>
+                                                <predicateEditorRowTemplate rowType="simple" id="ZD6-8p-r38">
+                                                    <array key="leftExpressionObject">
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">name</string>
+                                                        </expression>
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">address</string>
+                                                        </expression>
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">sign</string>
+                                                        </expression>
+                                                    </array>
+                                                    <integer key="rightExpressionObject" value="700"/>
+                                                    <popUpMenus>
+                                                        <menu id="2yJ-g3-bEu">
+                                                            <items>
+                                                                <menuItem title="name" state="on" id="2rS-Ak-h5c">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">name</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                                <menuItem title="address" id="Rm3-cN-854">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">address</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                                <menuItem title="sign" id="VlC-n1-Fi8">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">sign</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                        <menu id="gtZ-y2-3Fl">
+                                                            <items>
+                                                                <menuItem title="contains" state="on" id="Zfe-eN-gfJ">
+                                                                    <integer key="representedObject" value="99"/>
+                                                                </menuItem>
+                                                                <menuItem title="begins with" id="ZEA-xT-Wwx">
+                                                                    <integer key="representedObject" value="8"/>
+                                                                </menuItem>
+                                                                <menuItem title="ends with" id="Dcv-A0-9w7">
+                                                                    <integer key="representedObject" value="9"/>
+                                                                </menuItem>
+                                                                <menuItem title="is" id="jon-sk-1M9">
+                                                                    <integer key="representedObject" value="4"/>
+                                                                </menuItem>
+                                                                <menuItem title="is not" id="E8a-hf-q31">
+                                                                    <integer key="representedObject" value="5"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpMenus>
+                                                </predicateEditorRowTemplate>
+                                            </rowTemplates>
+                                        </predicateEditor>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.91000002619999998" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="JpR-th-sq9">
+                                    <rect key="frame" x="-100" y="-100" width="360" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="a4k-NZ-Pgz">
+                                    <rect key="frame" x="333" y="1" width="16" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="predicateEditor" destination="86f-2N-wmp" id="10D-bQ-ny2"/>
+                    </connections>
+                </viewController>
+                <menuItem title="of the following are true" state="on" id="Bs9-DW-iwX"/>
+                <menuItem title="of the following are true" state="on" id="Wxv-wS-uAL"/>
+                <customObject id="SyK-Z0-QWK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="1413"/>
         </scene>
         <!--Add Resource View Controller-->
         <scene sceneID="DDi-os-zC6">
@@ -1411,7 +1636,7 @@ DQ
                 </viewController>
                 <customObject id="5nE-rZ-6UN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="1648"/>
+            <point key="canvasLocation" x="1343" y="1941"/>
         </scene>
         <!--Add Developer View Controller-->
         <scene sceneID="6uA-cf-gB4">
@@ -1528,7 +1753,7 @@ DQ
                                     </subviews>
                                     <nil key="backgroundColor"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="dHa-nu-6hc">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="dHa-nu-6hc">
                                     <rect key="frame" x="1" y="194" width="161" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1719,6 +1944,16 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="reloadTable:" target="eAC-lM-CS9" id="xHP-Y3-LNO"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYr-R9-EjW">
+                                <rect key="frame" x="398" y="28" width="41" height="23"/>
+                                <buttonCell key="cell" type="smallSquare" title="جستجو" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ssf-Rg-tHL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".GeezaProInterface"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="lKg-CO-3bn" kind="popover" popoverAnchorView="JYr-R9-EjW" popoverBehavior="t" preferredEdge="maxY" id="hg5-Or-gcn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1951,7 +2186,7 @@ DQ
                 </viewController>
                 <customObject id="19Z-NT-4er" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="2022.5"/>
+            <point key="canvasLocation" x="1095" y="2255.5"/>
         </scene>
         <!--پروژه‌ها-->
         <scene sceneID="Mtl-zQ-dXX">
@@ -1989,6 +2224,17 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="removeProject:" target="Ol1-fJ-lVN" id="2Ey-hY-J7G"/>
+                                </connections>
+                            </button>
+                            <button identifier="addSystem" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-sh-pgP" customClass="AddSystemButtonClass" customModule="ERP_Models" customModuleProvider="target">
+                                <rect key="frame" x="170" y="23" width="19" height="19"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Dt-wi-aQK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <accessibility identifier="addSystem"/>
+                                <connections>
+                                    <segue destination="Oc9-Iy-I0t" kind="popover" popoverAnchorView="bIY-sh-pgP" popoverBehavior="t" preferredEdge="maxY" id="1em-WM-UQ1"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y93-OZ-SGn">
@@ -2038,7 +2284,7 @@ DQ
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="removeRequirement:" target="Ol1-fJ-lVN" id="v3Z-oZ-vEv"/>
+                                    <action selector="freeResourceFromProject:" target="Ol1-fJ-lVN" id="v7Q-8W-38W"/>
                                 </connections>
                             </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKq-Uh-9lK">
@@ -2217,7 +2463,7 @@ DQ
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.69042838390712902" horizontal="YES" id="HMV-XI-It6">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.66666666666666663" horizontal="YES" id="HMV-XI-It6">
                                     <rect key="frame" x="1" y="210" width="102" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -2387,15 +2633,14 @@ DQ
                                     <action selector="reloadTables:" target="Ol1-fJ-lVN" id="zPF-Sc-lb3"/>
                                 </connections>
                             </button>
-                            <button identifier="addSystem" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-sh-pgP">
-                                <rect key="frame" x="170" y="23" width="19" height="19"/>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Dt-wi-aQK">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQj-Xn-MCf">
+                                <rect key="frame" x="314" y="23" width="53" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="تخصیص" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SfB-Qs-ePm">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="12" name=".GeezaProInterface"/>
                                 </buttonCell>
-                                <accessibility identifier="addSystem"/>
                                 <connections>
-                                    <segue destination="Oc9-Iy-I0t" kind="popover" popoverAnchorView="bIY-sh-pgP" popoverBehavior="t" preferredEdge="maxY" id="1em-WM-UQ1"/>
+                                    <action selector="allocateRequirement:" target="Ol1-fJ-lVN" id="FUo-Ge-J47"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2993,14 +3238,6 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CxZ-qF-MJ3">
-                                <rect key="frame" x="158" y="213" width="31" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="دسته:" id="YI3-DW-ufs">
-                                    <font key="font" size="13" name=".GeezaProInterface"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6f-52-bHZ">
                                 <rect key="frame" x="18" y="213" width="118" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" id="AbI-1R-et5">
@@ -3025,9 +3262,17 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jAr-PS-Kbb">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CxZ-qF-MJ3">
+                                <rect key="frame" x="154" y="213" width="31" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="دسته:" id="YI3-DW-ufs">
+                                    <font key="font" size="13" name=".GeezaProInterface"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eoh-Gr-Ef4">
                                 <rect key="frame" x="158" y="171" width="32" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="تعداد:" id="ZUL-L8-hNv">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="تعداد:" id="OiT-4v-nYg">
                                     <font key="font" size="13" name=".GeezaProInterface"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -3036,7 +3281,7 @@ DQ
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="amountOfRequirmentsLabel" destination="jAr-PS-Kbb" id="FDc-Fh-4oH"/>
+                        <outlet property="amountOfRequirmentsLabel" destination="Eoh-Gr-Ef4" id="5vw-mX-WJc"/>
                         <outlet property="budgetLimitLabel" destination="5Z1-ix-4kz" id="EPP-lN-Gad"/>
                         <outlet property="categoryLabel" destination="CxZ-qF-MJ3" id="a2W-2p-YFr"/>
                         <outlet property="categoryValueLabel" destination="K6f-52-bHZ" id="ch6-lP-Na3"/>
@@ -3155,10 +3400,8 @@ DQ
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
-        <image name="NSUser" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KXO-Gl-0CK"/>
         <segue reference="1em-WM-UQ1"/>
     </inferredMetricsTieBreakers>
 </document>

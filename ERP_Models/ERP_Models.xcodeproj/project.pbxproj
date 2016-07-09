@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		29205BF71D31002400566AB1 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29205BF61D31002400566AB1 /* AddProjectViewController.swift */; };
 		29205BF91D31175700566AB1 /* AddSystemButtonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29205BF81D31175700566AB1 /* AddSystemButtonClass.swift */; };
+		29205BFC1D31422200566AB1 /* ResourceSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29205BFB1D31422200566AB1 /* ResourceSearchViewController.swift */; };
 		298E90E11D2BB42C0007F877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E90DF1D2BB42C0007F877 /* Main.storyboard */; };
 		D70235BB1D1D0746001FD0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70235BA1D1D0746001FD0FE /* AppDelegate.swift */; };
 		D70235BD1D1D0746001FD0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70235BC1D1D0746001FD0FE /* ViewController.swift */; };
@@ -169,6 +170,7 @@
 /* Begin PBXFileReference section */
 		29205BF61D31002400566AB1 /* AddProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProjectViewController.swift; path = "View Controllers/Project/AddProjectViewController.swift"; sourceTree = "<group>"; };
 		29205BF81D31175700566AB1 /* AddSystemButtonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSystemButtonClass.swift; path = "View Controllers/Project/AddSystemButtonClass.swift"; sourceTree = "<group>"; };
+		29205BFB1D31422200566AB1 /* ResourceSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourceSearchViewController.swift; path = "View Controllers/Resource/ResourceSearchViewController.swift"; sourceTree = "<group>"; };
 		298E90E01D2BB42C0007F877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		D70235B71D1D0746001FD0FE /* ERP_Models.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ERP_Models.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70235BA1D1D0746001FD0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				D733EB9C1D30E711004D6395 /* AddDeveloperViewController.swift */,
+				29205BFB1D31422200566AB1 /* ResourceSearchViewController.swift */,
 				D733EB9D1D30E711004D6395 /* addMaintenanceViewController.swift */,
 				D733EB9E1D30E711004D6395 /* AddResourceViewController.swift */,
 				D733EB9F1D30E711004D6395 /* ResourceViewController.swift */,
@@ -692,6 +695,7 @@
 				D733EB651D30E420004D6395 /* HumanResourceCategoriesEntity.swift in Sources */,
 				29205BF91D31175700566AB1 /* AddSystemButtonClass.swift in Sources */,
 				D733EB751D30E420004D6395 /* ProductEntity.swift in Sources */,
+				29205BFC1D31422200566AB1 /* ResourceSearchViewController.swift in Sources */,
 				D733EB601D30E420004D6395 /* FinancialResourceCategoriesEntity+CoreDataProperties.swift in Sources */,
 				D733EB901D30E420004D6395 /* ResourceCatalog.swift in Sources */,
 				D733EB661D30E420004D6395 /* HumanResourceEntity+CoreDataProperties.swift in Sources */,

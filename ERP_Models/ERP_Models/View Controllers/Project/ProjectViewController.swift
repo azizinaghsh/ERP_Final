@@ -25,10 +25,13 @@ class ProjectViewController: NSViewController {
     static var selectedSubSystemItem : Project?
     static var selectedProductItem: Product?
     static var selectedRequirementItem: Requirement?
+    static var selectedAllocationItem: Allocation?
     
     private var systems : Array<Project> = []
     
     private var requirements : Array<Requirement> = []
+    
+    private var allocations : Array<Allocation> = []
     
     private var products : Array<Product> = []
     
@@ -91,6 +94,9 @@ class ProjectViewController: NSViewController {
         if selectedRow >= 0 && selectedRow < self.requirements.count {
             ProjectViewController.selectedRequirementItem = self.requirements[selectedRow]
             return self.requirements[selectedRow]
+        } else if (selectedRow >= 0 && selectedRow < self.requirements.count + self.allocations.count)
+        {
+            ProjectViewController.selectedAllocationItem = self.allocations[selectedRow - requirements.count]
         }
         return nil
     }
@@ -130,7 +136,7 @@ class ProjectViewController: NSViewController {
         }
         else if(aTableView == self.requirementTable)
         {
-            return self.requirements.count
+            return self.requirements.count + allocations.count
         }else if(aTableView == self.productTable){
             return self.products.count
         }
@@ -149,12 +155,14 @@ class ProjectViewController: NSViewController {
             if ((clickedItem as! Project).isProject)
             {
                 requirements.removeAll()
+                allocations.removeAll()
                 systems.removeAll()
                 subsystems.removeAll()
                 products.removeAll()
                 
                 systems = (clickedItem as! Project).subProjects
                 requirements = (clickedItem as! Project).requirements
+                allocations = (clickedItem as! Project).allocations
                 products = (clickedItem as! Project).products
                 
                 requirementTable.reloadData()
@@ -166,10 +174,12 @@ class ProjectViewController: NSViewController {
             {
                 requirements.removeAll()
                 subsystems.removeAll()
+                allocations.removeAll()
                 products.removeAll()
                 
                 subsystems = (clickedItem as! Project).subProjects
                 requirements = (clickedItem as! Project).requirements
+                allocations = (clickedItem as! Project).allocations
                 products = (clickedItem as! Project).products
                 
                 requirementTable.reloadData()
@@ -180,8 +190,10 @@ class ProjectViewController: NSViewController {
             {
                 requirements.removeAll()
                 products.removeAll()
+                allocations.removeAll()
                 
                 requirements = (clickedItem as! Project).requirements
+                allocations = (clickedItem as! Project).allocations
                 products = (clickedItem as! Project).products
                 
                 requirementTable.reloadData()
@@ -192,7 +204,7 @@ class ProjectViewController: NSViewController {
             //            productTable.reloadData()
         }
         else if clickedItem is ProjectResourceRelationship{
-//            requirementTable.reloadData()
+            //            requirementTable.reloadData()
         }
     }
     
@@ -233,6 +245,19 @@ class ProjectViewController: NSViewController {
                                                   withAnimation: NSTableViewAnimationOptions.SlideRight)
         }
     }
+    @IBAction func allocateRequirement(sender: AnyObject) {
+        if let requirement = ProjectViewController.selectedRequirementItem{
+            requirement.tryRequirement()
+        }
+        requirementTable.reloadData()
+    }
+    
+    @IBAction func freeResourceFromProject (sender: AnyObject) {
+        if let allocation = ProjectViewController.selectedAllocationItem{
+            allocation.freeResource()
+        }
+        requirementTable.reloadData()
+    }
 }
 
 extension ProjectViewController: NSTableViewDataSource {
@@ -251,8 +276,26 @@ extension ProjectViewController: NSTableViewDataSource {
             cellView.textField!.stringValue = system.projectName as String
         }
         else if tableView == self.requirementTable{
-            let requirement = self.requirements[row]
-            cellView.textField!.stringValue = requirement.resource.name as String
+            if (row < requirements.count)
+            {
+                let requirement = self.requirements[row]
+                cellView.textField!.stringValue = requirement.resource.name as String
+            }
+            else
+            {
+                let allocation = self.allocations[row - requirements.count]
+                if (allocation.isCurrent)
+                {
+                    cellView.textField!.stringValue = allocation.resource.name as String
+                    cellView.textField?.textColor = NSColor.init(red: 0.37, green: 0.72, blue: 0.38, alpha: 1)
+                }
+                else
+                {
+                    cellView.textField!.stringValue = allocation.resource.name as String
+                    cellView.textField?.textColor = NSColor.init(red: 0.72, green: 0.37, blue: 0.37, alpha: 1)
+                }
+            }
+            
         }
         else if tableView == self.subSystemTable{
             let subsystem = self.subsystems[row]
@@ -273,20 +316,30 @@ extension ProjectViewController: NSTableViewDelegate {
     func tableViewSelectionDidChange(notification: NSNotification) {
         switch ((notification.object?.identifier)! as String) {
         case "projectTable":
-            let sellectedProject = selectedProject()
-            showNextItems(sellectedProject!)
+            if( projectTable.selectedRow>=0){
+                let sellectedProject = selectedProject()
+                showNextItems(sellectedProject!)
+            }
         case "systemTable":
-            let sellectedSystem = selectedSystem()
-            showNextItems(sellectedSystem!)
+            if( systemTable.selectedRow>=0){
+                let sellectedSystem = selectedSystem()
+                showNextItems(sellectedSystem!)
+            }
         case "subSystemTable":
-            let sellectedSubSystem = selectedSubSystem()
-            showNextItems(sellectedSubSystem)
+            if( subSystemTable.selectedRow>=0){
+                let sellectedSubSystem = selectedSubSystem()
+                showNextItems(sellectedSubSystem)
+            }
         case "productTable":
-            let sellectedProduct = selectedProduct()
-            showNextItems(sellectedProduct)
+            if( productTable.selectedRow>=0){
+                let sellectedProduct = selectedProduct()
+                showNextItems(sellectedProduct)
+            }
         case "requirementTable":
-            let sellectedRequirement = selectedRequirement()
-            showNextItems(sellectedRequirement)
+            if( requirementTable.selectedRow>=0){
+                let sellectedRequirement = selectedRequirement()
+                showNextItems(sellectedRequirement)
+            }
         default:
             print("Wrong Table")
         }
