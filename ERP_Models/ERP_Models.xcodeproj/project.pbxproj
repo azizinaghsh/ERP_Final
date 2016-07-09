@@ -91,13 +91,12 @@
 		D733EBB91D30E723004D6395 /* ClassTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBB21D30E723004D6395 /* ClassTable.swift */; };
 		D733EBBA1D30E723004D6395 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBB31D30E723004D6395 /* ProjectViewController.swift */; };
 		D733EBBB1D30E723004D6395 /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBB41D30E723004D6395 /* ShowInfoViewController.swift */; };
-		D75D60391D30E0550095C547 /* BarDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D60351D30E0550095C547 /* BarDemoViewController.swift */; };
-		D75D603A1D30E0550095C547 /* LineDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D60361D30E0550095C547 /* LineDemoViewController.swift */; };
-		D75D603B1D30E0550095C547 /* PieDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D60371D30E0550095C547 /* PieDemoViewController.swift */; };
-		D75D603C1D30E0550095C547 /* RadarDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D60381D30E0550095C547 /* RadarDemoViewController.swift */; };
-		D75D603F1D30E0610095C547 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75D603D1D30E0610095C547 /* Main2.storyboard */; };
 		D7C1C1E01D30E95900D881C0 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C1C1DD1D30E8F700D881C0 /* Charts.framework */; };
 		D7C1C1E11D30E95900D881C0 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7C1C1DD1D30E8F700D881C0 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D7D287B51D30EAA400F95481 /* BarDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D287B11D30EAA400F95481 /* BarDemoViewController.swift */; };
+		D7D287B61D30EAA400F95481 /* LineDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D287B21D30EAA400F95481 /* LineDemoViewController.swift */; };
+		D7D287B71D30EAA400F95481 /* PieDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D287B31D30EAA400F95481 /* PieDemoViewController.swift */; };
+		D7D287B81D30EAA400F95481 /* RadarDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D287B41D30EAA400F95481 /* RadarDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,13 +256,12 @@
 		D733EBB21D30E723004D6395 /* ClassTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassTable.swift; path = "View Controllers/Project/ClassTable.swift"; sourceTree = "<group>"; };
 		D733EBB31D30E723004D6395 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectViewController.swift; path = "View Controllers/Project/ProjectViewController.swift"; sourceTree = "<group>"; };
 		D733EBB41D30E723004D6395 /* ShowInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowInfoViewController.swift; path = "View Controllers/Project/ShowInfoViewController.swift"; sourceTree = "<group>"; };
-		D75D60351D30E0550095C547 /* BarDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDemoViewController.swift; sourceTree = "<group>"; };
-		D75D60361D30E0550095C547 /* LineDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDemoViewController.swift; sourceTree = "<group>"; };
-		D75D60371D30E0550095C547 /* PieDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieDemoViewController.swift; sourceTree = "<group>"; };
-		D75D60381D30E0550095C547 /* RadarDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarDemoViewController.swift; sourceTree = "<group>"; };
-		D75D603E1D30E0610095C547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../Downloads/Charts-master 2/ChartsDemo-OSX/ChartsDemo-OSX/Base.lproj/Main2.storyboard"; sourceTree = "<group>"; };
 		D7A8888D1D28A35400ACA6A9 /* ERP_Models-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ERP_Models-Bridging-Header.h"; sourceTree = "<group>"; };
 		D7C1C1D11D30E8F700D881C0 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		D7D287B11D30EAA400F95481 /* BarDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarDemoViewController.swift; path = ERP_Models/Models/Demos/BarDemoViewController.swift; sourceTree = SOURCE_ROOT; };
+		D7D287B21D30EAA400F95481 /* LineDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineDemoViewController.swift; path = ERP_Models/Models/Demos/LineDemoViewController.swift; sourceTree = SOURCE_ROOT; };
+		D7D287B31D30EAA400F95481 /* PieDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieDemoViewController.swift; path = ERP_Models/Models/Demos/PieDemoViewController.swift; sourceTree = SOURCE_ROOT; };
+		D7D287B41D30EAA400F95481 /* RadarDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadarDemoViewController.swift; path = ERP_Models/Models/Demos/RadarDemoViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,7 +374,6 @@
 				D733EB961D30E47A004D6395 /* StoredNSObject.swift */,
 				D70235C11D1D0746001FD0FE /* Assets.xcassets */,
 				D70235C61D1D0746001FD0FE /* Info.plist */,
-				D75D603D1D30E0610095C547 /* Main2.storyboard */,
 				298E90DF1D2BB42C0007F877 /* Main.storyboard */,
 				D733EB991D30E514004D6395 /* ERP_Models.xcdatamodeld */,
 			);
@@ -495,10 +492,10 @@
 		D75D60341D30E0550095C547 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
-				D75D60351D30E0550095C547 /* BarDemoViewController.swift */,
-				D75D60361D30E0550095C547 /* LineDemoViewController.swift */,
-				D75D60371D30E0550095C547 /* PieDemoViewController.swift */,
-				D75D60381D30E0550095C547 /* RadarDemoViewController.swift */,
+				D7D287B11D30EAA400F95481 /* BarDemoViewController.swift */,
+				D7D287B21D30EAA400F95481 /* LineDemoViewController.swift */,
+				D7D287B31D30EAA400F95481 /* PieDemoViewController.swift */,
+				D7D287B41D30EAA400F95481 /* RadarDemoViewController.swift */,
 			);
 			name = Demos;
 			path = "../../../../../Downloads/Charts-master 2/ChartsDemo-OSX/ChartsDemo-OSX/Demos";
@@ -659,7 +656,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70235C21D1D0746001FD0FE /* Assets.xcassets in Resources */,
-				D75D603F1D30E0610095C547 /* Main2.storyboard in Resources */,
 				298E90E11D2BB42C0007F877 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,21 +685,19 @@
 				D733EB751D30E420004D6395 /* ProductEntity.swift in Sources */,
 				D733EB601D30E420004D6395 /* FinancialResourceCategoriesEntity+CoreDataProperties.swift in Sources */,
 				D733EB901D30E420004D6395 /* ResourceCatalog.swift in Sources */,
-				D75D60391D30E0550095C547 /* BarDemoViewController.swift in Sources */,
 				D733EB661D30E420004D6395 /* HumanResourceEntity+CoreDataProperties.swift in Sources */,
 				D733EBAC1D30E71B004D6395 /* UserRegisterationViewController.swift in Sources */,
 				D733EB791D30E420004D6395 /* ProjectEntity.swift in Sources */,
-				D75D603B1D30E0550095C547 /* PieDemoViewController.swift in Sources */,
 				D733EB8B1D30E420004D6395 /* Module.swift in Sources */,
 				D733EB921D30E420004D6395 /* PermissionCatalog.swift in Sources */,
 				D733EBBB1D30E723004D6395 /* ShowInfoViewController.swift in Sources */,
+				D7D287B51D30EAA400F95481 /* BarDemoViewController.swift in Sources */,
 				D733EB871D30E420004D6395 /* Requirment.swift in Sources */,
 				D733EB811D30E420004D6395 /* UserEntity.swift in Sources */,
 				D733EB7E1D30E420004D6395 /* ResourceEntity+CoreDataProperties.swift in Sources */,
 				D733EBAD1D30E71B004D6395 /* UserViewController.swift in Sources */,
 				D733EB5D1D30E420004D6395 /* CategoriesEntity.swift in Sources */,
 				D733EB8F1D30E420004D6395 /* ResourceBuilder.swift in Sources */,
-				D75D603C1D30E0550095C547 /* RadarDemoViewController.swift in Sources */,
 				D733EBB61D30E723004D6395 /* AddProjectViewController.swift in Sources */,
 				D733EB671D30E420004D6395 /* HumanResourceEntity.swift in Sources */,
 				D733EB6B1D30E420004D6395 /* ModuleCategoriesEntity.swift in Sources */,
@@ -716,7 +710,6 @@
 				D733EBA11D30E711004D6395 /* AddDeveloperViewController.swift in Sources */,
 				D733EBA21D30E711004D6395 /* addMaintenanceViewController.swift in Sources */,
 				D733EB7F1D30E420004D6395 /* ResourceEntity.swift in Sources */,
-				D75D603A1D30E0550095C547 /* LineDemoViewController.swift in Sources */,
 				D733EB981D30E47A004D6395 /* StoredNSObject.swift in Sources */,
 				D733EB931D30E420004D6395 /* User.swift in Sources */,
 				D733EB621D30E420004D6395 /* FinancialResourceEntity+CoreDataProperties.swift in Sources */,
@@ -730,6 +723,7 @@
 				D733EB6E1D30E420004D6395 /* PermissionEntity+CoreDataProperties.swift in Sources */,
 				D733EB851D30E420004D6395 /* ProjectCatalog.swift in Sources */,
 				D733EB8C1D30E420004D6395 /* PhysicalResource.swift in Sources */,
+				D7D287B71D30EAA400F95481 /* PieDemoViewController.swift in Sources */,
 				D733EB911D30E420004D6395 /* Permission.swift in Sources */,
 				D733EBBA1D30E723004D6395 /* ProjectViewController.swift in Sources */,
 				D733EB8E1D30E420004D6395 /* Resource.swift in Sources */,
@@ -757,6 +751,7 @@
 				D733EB711D30E420004D6395 /* PhysicalResourceCategoriesEntity.swift in Sources */,
 				D733EBA41D30E711004D6395 /* ResourceViewController.swift in Sources */,
 				D733EBAB1D30E71B004D6395 /* LoginViewController.swift in Sources */,
+				D7D287B61D30EAA400F95481 /* LineDemoViewController.swift in Sources */,
 				D733EB7C1D30E420004D6395 /* RequirementEntity+CoreDataProperties.swift in Sources */,
 				D733EB5F1D30E420004D6395 /* Entity.swift in Sources */,
 				D733EB5E1D30E420004D6395 /* DataController.swift in Sources */,
@@ -768,6 +763,7 @@
 				D733EBB51D30E723004D6395 /* AddProductViewController.swift in Sources */,
 				D733EBAA1D30E71B004D6395 /* AddPermissionVIewController.swift in Sources */,
 				D733EB941D30E420004D6395 /* UserCatalog.swift in Sources */,
+				D7D287B81D30EAA400F95481 /* RadarDemoViewController.swift in Sources */,
 				D733EB721D30E420004D6395 /* PhysicalResourceEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,14 +811,6 @@
 				298E90E01D2BB42C0007F877 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D75D603D1D30E0610095C547 /* Main2.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D75D603E1D30E0610095C547 /* Base */,
-			);
-			name = Main2.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
