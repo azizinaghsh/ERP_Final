@@ -21,6 +21,8 @@ class ProjectViewController: NSViewController {
     }
     
     static var selectedItem: Project?
+    static var selectedSystemItem : Project?
+    static var selectedSubSystemItem : Project?
     static var selectedProductItem: Product?
     static var selectedRequirementItem: Requirement?
     
@@ -67,6 +69,8 @@ class ProjectViewController: NSViewController {
         let selectedRow = self.projectTable.selectedRow;
         if selectedRow >= 0 && selectedRow < self.projects.count {
             ProjectViewController.selectedItem = self.projects[selectedRow]
+            ProjectViewController.selectedSystemItem = nil
+            ProjectViewController.selectedSubSystemItem = nil
             ProjectViewController.selectedProductItem = nil
             ProjectViewController.selectedRequirementItem = nil
             return self.projects[selectedRow]
@@ -78,8 +82,6 @@ class ProjectViewController: NSViewController {
         let selectedRow = self.productTable.selectedRow;
         if selectedRow >= 0 && selectedRow < self.products.count {
             ProjectViewController.selectedProductItem = self.products[selectedRow]
-            ProjectViewController.selectedItem = nil
-            ProjectViewController.selectedRequirementItem = nil
             return self.products[selectedRow]
         }
         return nil
@@ -87,8 +89,6 @@ class ProjectViewController: NSViewController {
     func selectedRequirement() -> Requirement? {
         let selectedRow = self.requirementTable.selectedRow;
         if selectedRow >= 0 && selectedRow < self.requirements.count {
-            ProjectViewController.selectedItem = nil
-            ProjectViewController.selectedProductItem = nil
             ProjectViewController.selectedRequirementItem = self.requirements[selectedRow]
             return self.requirements[selectedRow]
         }
@@ -97,10 +97,23 @@ class ProjectViewController: NSViewController {
     func selectedSystem() -> Project? {
         let selectedRow = self.systemTable.selectedRow;
         if selectedRow >= 0 && selectedRow < self.systems.count {
-            ProjectViewController.selectedItem = self.systems[selectedRow]
+            ProjectViewController.selectedSystemItem = self.systems[selectedRow]
+            ProjectViewController.selectedSubSystemItem = nil
             ProjectViewController.selectedProductItem = nil
             ProjectViewController.selectedRequirementItem = nil
             return self.systems[selectedRow]
+        }
+        return nil
+    }
+    
+    func selectedSubSystem() -> Project? {
+        let selectedRow = self.subSystemTable.selectedRow
+        if (selectedRow >= 0 && selectedRow < self.subsystems.count)
+        {
+            ProjectViewController.selectedSubSystemItem = self.subsystems[selectedRow]
+            ProjectViewController.selectedProductItem = nil
+            ProjectViewController.selectedRequirementItem = nil
+            return self.subsystems[selectedRow]
         }
         return nil
     }
@@ -121,43 +134,66 @@ class ProjectViewController: NSViewController {
         }else if(aTableView == self.productTable){
             return self.products.count
         }
+        else if (aTableView == self.subSystemTable)
+        {
+            return self.subsystems.count
+        }
         else{
             return 0
         }
     }
     
-    func showSystemOfProject<T>(clickedItem: T){
+    func showNextItems<T>(clickedItem: T){
         
-        if clickedItem is Project{
-            requirements.removeAll()
-            systems.removeAll()
-            products.removeAll()
-            
-            systems = (clickedItem as! Project).subProjects
-            requirements = (clickedItem as! Project).requirements
-            products = (clickedItem as! Project).products
-            
-            productTable.reloadData()
-        }
-        else if clickedItem is Project{
-            
-            subsystems = (clickedItem as! Project).subProjects
-            requirements = (clickedItem as! Project).requirements
-            products = (clickedItem as! Project).products
-            
-            subSystemTable.reloadData()
+        if (clickedItem is Project){
+            if ((clickedItem as! Project).isProject)
+            {
+                requirements.removeAll()
+                systems.removeAll()
+                subsystems.removeAll()
+                products.removeAll()
+                
+                systems = (clickedItem as! Project).subProjects
+                requirements = (clickedItem as! Project).requirements
+                products = (clickedItem as! Project).products
+                
+                requirementTable.reloadData()
+                systemTable.reloadData()
+                productTable.reloadData()
+                subSystemTable.reloadData()
+            }
+            else if ((clickedItem as! Project).isSystem)
+            {
+                requirements.removeAll()
+                subsystems.removeAll()
+                products.removeAll()
+                
+                subsystems = (clickedItem as! Project).subProjects
+                requirements = (clickedItem as! Project).requirements
+                products = (clickedItem as! Project).products
+                
+                requirementTable.reloadData()
+                subSystemTable.reloadData()
+                productTable.reloadData()
+            }
+            else
+            {
+                requirements.removeAll()
+                products.removeAll()
+                
+                requirements = (clickedItem as! Project).requirements
+                products = (clickedItem as! Project).products
+                
+                requirementTable.reloadData()
+                productTable.reloadData()
+            }
         }
         else if clickedItem is Product{
-//            productTable.reloadData()
+            //            productTable.reloadData()
         }
         else if clickedItem is ProjectResourceRelationship{
-            requirementTable.reloadData()
+//            requirementTable.reloadData()
         }
-       
-        
-        systemTable.reloadData()
-        requirementTable.reloadData()
-        
     }
     
     
@@ -174,7 +210,7 @@ class ProjectViewController: NSViewController {
         if selectedProduct() != nil{
             //            ProjectCatalog.getInstance()
             
-
+            
             // 3. Remove the selected row from the table view
             self.productTable.removeRowsAtIndexes(NSIndexSet(index:self.productTable.selectedRow),
                                                   withAnimation: NSTableViewAnimationOptions.SlideRight)
@@ -189,12 +225,12 @@ class ProjectViewController: NSViewController {
     @IBAction func removeProject(sender: AnyObject) {
         
         if selectedProject() != nil{
-//            ProjectCatalog.getInstance()
+            //            ProjectCatalog.getInstance()
             
             
             // 3. Remove the selected row from the table view
             self.projectTable.removeRowsAtIndexes(NSIndexSet(index:self.projectTable.selectedRow),
-                                                   withAnimation: NSTableViewAnimationOptions.SlideRight)
+                                                  withAnimation: NSTableViewAnimationOptions.SlideRight)
         }
     }
 }
@@ -235,21 +271,24 @@ extension ProjectViewController: NSTableViewDataSource {
 
 extension ProjectViewController: NSTableViewDelegate {
     func tableViewSelectionDidChange(notification: NSNotification) {
-        if( productTable.selectedRow>=0){
-            let sellectedProduct = selectedProduct()
-            showSystemOfProject(sellectedProduct)
-        }
-        else if ( requirementTable.selectedRow>=0){
-            let sellectedRequirement = selectedRequirement()
-            showSystemOfProject(sellectedRequirement)
-        }
-        else if (systemTable.selectedRow>=0){
-            let sellectedSystem = selectedSystem()
-            showSystemOfProject(sellectedSystem!)
-        }
-        else if (projectTable.selectedRow>=0){
+        switch ((notification.object?.identifier)! as String) {
+        case "projectTable":
             let sellectedProject = selectedProject()
-            showSystemOfProject(sellectedProject!)
+            showNextItems(sellectedProject!)
+        case "systemTable":
+            let sellectedSystem = selectedSystem()
+            showNextItems(sellectedSystem!)
+        case "subSystemTable":
+            let sellectedSubSystem = selectedSubSystem()
+            showNextItems(sellectedSubSystem)
+        case "productTable":
+            let sellectedProduct = selectedProduct()
+            showNextItems(sellectedProduct)
+        case "requirementTable":
+            let sellectedRequirement = selectedRequirement()
+            showNextItems(sellectedRequirement)
+        default:
+            print("Wrong Table")
         }
     }
 }

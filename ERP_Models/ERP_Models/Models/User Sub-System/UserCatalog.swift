@@ -120,6 +120,6 @@ class UserCatalog: NSObject {
     
     func getSampleUsers () -> [User]
     {
-        return [User(withFirstName: "حسین", lastName: "عزیزی", username: "hosseinazizi", andPassword: "44647454", withEntity: nil)]
+        return [User(withFirstName: "حسین", lastName: "عزیزی", username: "admin", andPassword: "123456", withEntity: nil)]
     }
 }

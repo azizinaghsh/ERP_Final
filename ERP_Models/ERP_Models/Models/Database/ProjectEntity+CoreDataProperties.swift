@@ -28,5 +28,6 @@ extension ProjectEntity {
     @NSManaged var subProjects: NSSet?
     @NSManaged var superProject: ProjectEntity?
     @NSManaged var allocations: NSSet?
+    @NSManaged var isSystem: NSNumber?
 
 }

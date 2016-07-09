@@ -83,7 +83,7 @@ class ProjectCatalog: NSObject {
     
     func addProject (withName name : NSString, category: NSString, describedAs description: NSString?, budgetLimit : Int?, humanResourceLimit : Int?, isManagedBy manager : User?, entity: ProjectEntity?) -> Project
     {
-        let newProject = Project (isProjectRoot: true, withName : name, category: category, description: description,  budgetLimitIs: budgetLimit, humanResourceLimitIs: humanResourceLimit, isManagedBy : manager, entity: entity)
+        let newProject = Project (isProjectRoot: true, isSystem: false, withName : name, category: category, description: description,  budgetLimitIs: budgetLimit, humanResourceLimitIs: humanResourceLimit, isManagedBy : manager, entity: entity)
         projects.append(newProject)
         return newProject
     }
@@ -108,10 +108,10 @@ class ProjectCatalog: NSObject {
                     let newProject = addProject(withName: projectEntity.projectName!, category: projectEntity.myCategory!.category!, describedAs: projectEntity.projectDescription, budgetLimit: (projectEntity.budgetLimit?.integerValue), humanResourceLimit: projectEntity.humanResourceLmit?.integerValue, isManagedBy: UserCatalog.getInstance().FindUser(projectEntity.manager?.username), entity: projectEntity)
                     newProject.startDate = projectEntity.startDate!
                     newProject.endDate = projectEntity.endDate
-                    fetchSubProjects(newProject)
+                    fetchSubProjects(newProject, isSystem: true)
                     for subProject in newProject.subProjects
                     {
-                        fetchSubProjects(subProject)
+                        fetchSubProjects(subProject, isSystem: false)
                     }
                     fetchRequirements(newProject)
                     fetchAllocations(newProject)
@@ -176,14 +176,14 @@ class ProjectCatalog: NSObject {
         }
     }
     
-    func fetchSubProjects (project: Project)
+    func fetchSubProjects (project: Project, isSystem: Bool)
     {
         if let subProjectEntities = (project.myEntity as! ProjectEntity).subProjects
         {
             for subProjectEntityFromSet in subProjectEntities
             {
                 let subProjectEntity = subProjectEntityFromSet as! ProjectEntity
-                let newSubProject = project.addSubSystem(withName: subProjectEntity.projectName!, category: subProjectEntity.myCategory!.category!, description: subProjectEntity.description, budgetLimit: subProjectEntity.budgetLimit?.integerValue, humanResourceLimit: subProjectEntity.humanResourceLmit?.integerValue, managedBy: UserCatalog.getInstance().FindUser(subProjectEntity.manager?.username), entity: subProjectEntity)
+                let newSubProject = project.addSubSystem(withName: subProjectEntity.projectName!, isSystem: isSystem, category: subProjectEntity.myCategory!.category!, description: subProjectEntity.description, budgetLimit: subProjectEntity.budgetLimit?.integerValue, humanResourceLimit: subProjectEntity.humanResourceLmit?.integerValue, managedBy: UserCatalog.getInstance().FindUser(subProjectEntity.manager?.username), entity: subProjectEntity)
                 newSubProject.startDate = subProjectEntity.startDate!
                 newSubProject.endDate = subProjectEntity.endDate
                 fetchProducts(newSubProject)

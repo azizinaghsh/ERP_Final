@@ -69,6 +69,7 @@
         <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="humanResourceLmit" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="isProject" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isSystem" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="projectDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="projectName" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="String" syncable="YES"/>
@@ -123,7 +124,7 @@
         <element name="PhysicalResource" positionX="-4583" positionY="-27" width="128" height="90"/>
         <element name="PhysicalResourceCategories" positionX="-4581" positionY="141" width="128" height="60"/>
         <element name="Product" positionX="-4851" positionY="-396" width="128" height="90"/>
-        <element name="Project" positionX="-4061" positionY="-339" width="128" height="255"/>
+        <element name="Project" positionX="-4061" positionY="-339" width="128" height="270"/>
         <element name="ProjectCategories" positionX="-4160" positionY="33" width="128" height="60"/>
         <element name="QuantitativeResource" positionX="-4635" positionY="-318" width="128" height="73"/>
         <element name="Requirement" positionX="-3944" positionY="-129" width="128" height="120"/>

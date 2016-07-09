@@ -23,8 +23,9 @@ class Project: NSObjectStored {
     var budgetLimit : Int?
     var category : NSString
     var isProject : Bool
+    var isSystem : Bool
     
-    init (isProjectRoot isProject: Bool, withName name : NSString, category : NSString, description: NSString?, budgetLimitIs budgetLimit : Int?, humanResourceLimitIs humanResourceLimit : Int?, isManagedBy manager : User?, entity: ProjectEntity?)
+    init (isProjectRoot isProject: Bool, isSystem: Bool, withName name : NSString, category : NSString, description: NSString?, budgetLimitIs budgetLimit : Int?, humanResourceLimitIs humanResourceLimit : Int?, isManagedBy manager : User?, entity: ProjectEntity?)
     {
         self.startDate = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .NoStyle)
         self.projectName = name
@@ -34,6 +35,7 @@ class Project: NSObjectStored {
         self.humanResourceLimit = humanResourceLimit
         self.category = category
         self.isProject = isProject
+        self.isSystem = isSystem
         super.init(ProjectEntity.self, entity: entity)
     }
     
@@ -53,9 +55,9 @@ class Project: NSObjectStored {
         return requirement
     }
     
-    func addSubSystem (withName name: NSString, category: NSString, description: NSString?, budgetLimit: Int?, humanResourceLimit: Int?, managedBy manager : User?, entity: ProjectEntity?) -> Project
+    func addSubSystem (withName name: NSString, isSystem: Bool, category: NSString, description: NSString?, budgetLimit: Int?, humanResourceLimit: Int?, managedBy manager : User?, entity: ProjectEntity?) -> Project
     {
-        let newSubProject = Project (isProjectRoot: false,withName: name, category: category, description: description, budgetLimitIs: budgetLimit, humanResourceLimitIs: humanResourceLimit, isManagedBy: manager, entity: entity)
+        let newSubProject = Project (isProjectRoot: false, isSystem: isSystem, withName: name, category: category, description: description, budgetLimitIs: budgetLimit, humanResourceLimitIs: humanResourceLimit, isManagedBy: manager, entity: entity)
         subProjects.append(newSubProject)
         let newSubProjectEntity = (newSubProject.myEntity as! ProjectEntity)
         newSubProjectEntity.superProject = myEntity as? ProjectEntity

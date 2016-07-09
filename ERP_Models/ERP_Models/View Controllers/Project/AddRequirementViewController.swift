@@ -9,14 +9,13 @@
 import Cocoa
 
 class AddRequirementViewController: NSViewController {
-
+    
     @IBOutlet weak var resourceListButton: NSPopUpButton!
     @IBOutlet weak var selectedProjectHierarchyLabel: NSTextField!
     
     @IBOutlet weak var estimatedTime: NSTextField!
     @IBOutlet weak var numberOfRequirement: NSTextField!
     
-    var currentProject: Project?
     private var resources : Array<Resource>
         {
         get{
@@ -27,11 +26,8 @@ class AddRequirementViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let project = ProjectViewController.selectedItem
-        currentProject = project
-        if (project != nil){
-            selectedProjectHierarchyLabel.stringValue = (project?.projectName)! as String
+        if (ProjectViewController.selectedItem != nil){
+            selectedProjectHierarchyLabel.stringValue = (ProjectViewController.selectedItem?.projectName)! as String
             for res in resources{
                 resourceListButton.addItemWithTitle(res.name as String)
             }
@@ -42,16 +38,26 @@ class AddRequirementViewController: NSViewController {
     }
     
     @IBAction func addRequirement(sender: AnyObject) {
-        for res in resources{
-            if(res.name == resourceListButton.selectedItem?.title){
-                let numberOfReq = numberOfRequirement.integerValue
-                let estimated = estimatedTime.integerValue
-                
-                currentProject!.createRequirement(forResource: res, withAmount: numberOfReq, estimatedToBeUsed: estimated, entity: nil)
-                
-            }
-        }
+        let res = ResourceCatalog.getInstance().findResource(Resource.self, name: resourceListButton.selectedItem?.title)[0]
+        let numberOfReq = numberOfRequirement.integerValue
+        let estimated = estimatedTime.integerValue
         
+        var selectedProjectHierarchy: Project? = nil
+        if (ProjectViewController.selectedSubSystemItem != nil)
+        {
+            selectedProjectHierarchy = ProjectViewController.selectedSubSystemItem!
+        }
+        else if (ProjectViewController.selectedSystemItem != nil)
+        {
+            selectedProjectHierarchy = ProjectViewController.selectedSystemItem!
+        }
+        else if (ProjectViewController.selectedItem != nil)
+        {
+            selectedProjectHierarchy = ProjectViewController.selectedItem!
+        }
+        selectedProjectHierarchy?.createRequirement(forResource: res, withAmount: numberOfReq, estimatedToBeUsed: estimated, entity: nil)
+        
+        dismissViewController(self)
     }
     
 }

@@ -81,14 +81,14 @@ class ShowInfoViewController: NSViewController {
                 let manager = selectedItem!.projectManager
                 let humanLimit = selectedItem!.humanResourceLimit
                 let budgetLimit = selectedItem!.budgetLimit
-                //            let description = (selectedItem as! Project).description as String
+                let description = selectedItem!.projectDescription as String?
                 
                 if (manager != nil){
                     self.projectManagerLabel.stringValue = (manager?.username)! as String
                 }
                 projectHumanResourceLimit.integerValue = humanLimit!
                 projectBudgetLimit.integerValue = budgetLimit!
-                projectDesciptionText.stringValue = description
+                projectDesciptionText.stringValue = description ?? ""
                 
             }
             

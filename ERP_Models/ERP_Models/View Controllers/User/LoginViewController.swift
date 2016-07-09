@@ -24,16 +24,16 @@ class LoginViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        if ((UserCatalog.getInstance().currentUser) != nil) {
-            userNameInput.hidden = true
-            passwordInput.hidden = true
-            passwordLabel.hidden = true
-            
-            usernameLabel.stringValue = (UserCatalog.getInstance().currentUser?.username)! as String
-            usernameLabel.hidden = false
-            logoutButton.hidden = false
-            
-        }
+//        if ((UserCatalog.getInstance().currentUser) != nil) {
+//            userNameInput.hidden = true
+//            passwordInput.hidden = true
+//            passwordLabel.hidden = true
+//            
+//            usernameLabel.stringValue = (UserCatalog.getInstance().currentUser?.username)! as String
+//            usernameLabel.hidden = false
+//            logoutButton.hidden = false
+//            
+//        }
         
     }
     
@@ -42,8 +42,11 @@ class LoginViewController: NSViewController {
         let username = userNameInput.stringValue
         let password = passwordInput.stringValue
         
-        UserCatalog.getInstance().login(username, password: password)
-        dismissViewController(self)
+        if (UserCatalog.getInstance().login(username, password: password))
+        {
+            self.performSegueWithIdentifier("correctLogin", sender: self)
+            dismissViewController(self)
+        }
     }
     
     @IBAction func logout(sender: AnyObject) {

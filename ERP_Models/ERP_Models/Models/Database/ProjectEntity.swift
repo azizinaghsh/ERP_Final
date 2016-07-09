@@ -24,6 +24,8 @@ class ProjectEntity: Entity {
         self.myCategory = ProjectCatalog.getInstance().getCategoriesEntity(project.category)
         self.manager = UserCatalog.getInstance().FindUserEntity((project.projectManager?.username) as String?)
         self.isProject = project.isProject
+        self.isSystem = project.isSystem
+        
     }
     
     override class func getMyType () -> String

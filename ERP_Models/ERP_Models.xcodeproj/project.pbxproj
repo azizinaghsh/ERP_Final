@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29205BF71D31002400566AB1 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29205BF61D31002400566AB1 /* AddProjectViewController.swift */; };
+		29205BF91D31175700566AB1 /* AddSystemButtonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29205BF81D31175700566AB1 /* AddSystemButtonClass.swift */; };
 		298E90E11D2BB42C0007F877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E90DF1D2BB42C0007F877 /* Main.storyboard */; };
 		D70235BB1D1D0746001FD0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70235BA1D1D0746001FD0FE /* AppDelegate.swift */; };
 		D70235BD1D1D0746001FD0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70235BC1D1D0746001FD0FE /* ViewController.swift */; };
@@ -85,7 +87,6 @@
 		D733EBAC1D30E71B004D6395 /* UserRegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBA81D30E71B004D6395 /* UserRegisterationViewController.swift */; };
 		D733EBAD1D30E71B004D6395 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBA91D30E71B004D6395 /* UserViewController.swift */; };
 		D733EBB51D30E723004D6395 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBAE1D30E723004D6395 /* AddProductViewController.swift */; };
-		D733EBB61D30E723004D6395 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBAF1D30E723004D6395 /* AddProjectViewController.swift */; };
 		D733EBB71D30E723004D6395 /* AddRequirementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBB01D30E723004D6395 /* AddRequirementViewController.swift */; };
 		D733EBB81D30E723004D6395 /* AddSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBB11D30E723004D6395 /* AddSystemViewController.swift */; };
 		D733EBB91D30E723004D6395 /* ClassTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733EBB21D30E723004D6395 /* ClassTable.swift */; };
@@ -166,6 +167,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29205BF61D31002400566AB1 /* AddProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProjectViewController.swift; path = "View Controllers/Project/AddProjectViewController.swift"; sourceTree = "<group>"; };
+		29205BF81D31175700566AB1 /* AddSystemButtonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSystemButtonClass.swift; path = "View Controllers/Project/AddSystemButtonClass.swift"; sourceTree = "<group>"; };
 		298E90E01D2BB42C0007F877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		D70235B71D1D0746001FD0FE /* ERP_Models.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ERP_Models.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70235BA1D1D0746001FD0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -250,7 +253,6 @@
 		D733EBA81D30E71B004D6395 /* UserRegisterationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserRegisterationViewController.swift; path = "View Controllers/User/UserRegisterationViewController.swift"; sourceTree = "<group>"; };
 		D733EBA91D30E71B004D6395 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = "View Controllers/User/UserViewController.swift"; sourceTree = "<group>"; };
 		D733EBAE1D30E723004D6395 /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProductViewController.swift; path = "View Controllers/Project/AddProductViewController.swift"; sourceTree = "<group>"; };
-		D733EBAF1D30E723004D6395 /* AddProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProjectViewController.swift; path = "View Controllers/Project/AddProjectViewController.swift"; sourceTree = "<group>"; };
 		D733EBB01D30E723004D6395 /* AddRequirementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRequirementViewController.swift; path = "View Controllers/Project/AddRequirementViewController.swift"; sourceTree = "<group>"; };
 		D733EBB11D30E723004D6395 /* AddSystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSystemViewController.swift; path = "View Controllers/Project/AddSystemViewController.swift"; sourceTree = "<group>"; };
 		D733EBB21D30E723004D6395 /* ClassTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassTable.swift; path = "View Controllers/Project/ClassTable.swift"; sourceTree = "<group>"; };
@@ -293,13 +295,14 @@
 		29837FA51D2EAB29004A73FE /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				29205BF61D31002400566AB1 /* AddProjectViewController.swift */,
 				D733EBAE1D30E723004D6395 /* AddProductViewController.swift */,
-				D733EBAF1D30E723004D6395 /* AddProjectViewController.swift */,
 				D733EBB01D30E723004D6395 /* AddRequirementViewController.swift */,
 				D733EBB11D30E723004D6395 /* AddSystemViewController.swift */,
 				D733EBB21D30E723004D6395 /* ClassTable.swift */,
 				D733EBB31D30E723004D6395 /* ProjectViewController.swift */,
 				D733EBB41D30E723004D6395 /* ShowInfoViewController.swift */,
+				29205BF81D31175700566AB1 /* AddSystemButtonClass.swift */,
 			);
 			name = Project;
 			sourceTree = "<group>";
@@ -576,6 +579,10 @@
 		D70235AF1D1D0746001FD0FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					0,
+					1,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Hossein Azizi";
@@ -681,7 +688,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29205BF71D31002400566AB1 /* AddProjectViewController.swift in Sources */,
 				D733EB651D30E420004D6395 /* HumanResourceCategoriesEntity.swift in Sources */,
+				29205BF91D31175700566AB1 /* AddSystemButtonClass.swift in Sources */,
 				D733EB751D30E420004D6395 /* ProductEntity.swift in Sources */,
 				D733EB601D30E420004D6395 /* FinancialResourceCategoriesEntity+CoreDataProperties.swift in Sources */,
 				D733EB901D30E420004D6395 /* ResourceCatalog.swift in Sources */,
@@ -698,7 +707,6 @@
 				D733EBAD1D30E71B004D6395 /* UserViewController.swift in Sources */,
 				D733EB5D1D30E420004D6395 /* CategoriesEntity.swift in Sources */,
 				D733EB8F1D30E420004D6395 /* ResourceBuilder.swift in Sources */,
-				D733EBB61D30E723004D6395 /* AddProjectViewController.swift in Sources */,
 				D733EB671D30E420004D6395 /* HumanResourceEntity.swift in Sources */,
 				D733EB6B1D30E420004D6395 /* ModuleCategoriesEntity.swift in Sources */,
 				D733EB7B1D30E420004D6395 /* QuantitativeResourceEntity.swift in Sources */,

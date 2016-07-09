@@ -16,13 +16,13 @@ class ViewController: NSViewController {
     @IBOutlet weak var loginButton: NSButton!
     
     override func viewDidLoad() {
-
-        ProjectCatalog.getInstance().addCategory("")
+        let loginView = LoginViewController()
+        loginView.viewDidLoad()
+        
         super.viewDidLoad()
         
         
-        let loginView = LoginViewController()
-        loginView.viewDidLoad()
+        
         
         // Do any additional setup after loading the view.
     }

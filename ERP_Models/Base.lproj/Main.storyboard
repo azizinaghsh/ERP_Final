@@ -752,27 +752,21 @@ Gw
                         <value key="maxSize" type="size" width="520" height="310"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="Wed-Yi-pQy" kind="relationship" relationship="window.shadowedContentViewController" id="VWo-VO-qu4"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--سامانه مدیریت منابع-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="ERP_Models" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="سامانه مدیریت منابع" id="XfG-lQ-9wD" customClass="ViewController" customModule="ERP_Models" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="520" height="310"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="0LW-hB-SqV">
-                                <rect key="frame" x="0.0" y="0.0" width="520" height="310"/>
-                                <connections>
-                                    <segue destination="WJL-H0-VVT" kind="embed" id="YXg-8V-4WW"/>
-                                </connections>
-                            </containerView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6YE-eP-O7G">
                                 <rect key="frame" x="21" y="277" width="58" height="32"/>
                                 <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSUser" imagePosition="overlaps" alignment="right" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f0c-M2-lIb">
@@ -780,9 +774,15 @@ Gw
                                     <font key="font" size="13" name=".GeezaProInterface"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="Wed-Yi-pQy" kind="sheet" id="arV-KR-shQ"/>
+                                    <segue destination="Wed-Yi-pQy" kind="sheet" id="KXO-Gl-0CK"/>
                                 </connections>
                             </button>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="0LW-hB-SqV">
+                                <rect key="frame" x="0.0" y="0.0" width="520" height="310"/>
+                                <connections>
+                                    <segue destination="WJL-H0-VVT" kind="embed" id="znx-2O-R1B"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="0LW-hB-SqV" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="E56-rd-nw3"/>
@@ -881,11 +881,12 @@ DQ
                         <outlet property="passwordLabel" destination="dX2-TT-Itb" id="Rji-t2-jIy"/>
                         <outlet property="userNameInput" destination="z0e-Iu-7ie" id="z1n-am-0Pt"/>
                         <outlet property="usernameLabel" destination="U2N-Dz-SId" id="OLt-Im-pIa"/>
+                        <segue destination="XfG-lQ-9wD" kind="show" identifier="correctLogin" id="Kff-JF-IpO"/>
                     </connections>
                 </viewController>
                 <customObject id="vcV-iJ-VJ3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="734"/>
+            <point key="canvasLocation" x="-520" y="829"/>
         </scene>
         <!--گزارش-->
         <scene sceneID="7Es-tu-8kD">
@@ -1001,7 +1002,7 @@ DQ
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="Wcv-p7-xLz">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.35709505057377089" horizontal="YES" id="Wcv-p7-xLz">
                                     <rect key="frame" x="1" y="195" width="149" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1527,8 +1528,8 @@ DQ
                                     </subviews>
                                     <nil key="backgroundColor"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="dHa-nu-6hc">
-                                    <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="dHa-nu-6hc">
+                                    <rect key="frame" x="1" y="194" width="161" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="syS-yD-hXb">
@@ -1907,16 +1908,17 @@ DQ
                                 <datePickerCell key="cell" borderStyle="bezel" baseWritingDirection="rightToLeft" userInterfaceLayoutDirection="rightToLeft" alignment="left" datePickerStyle="clockAndCalendar" id="npI-Db-Ikx">
                                     <font key="font" metaFont="system"/>
                                     <date key="date" timeIntervalSinceReferenceDate="489798000">
-                                        <!--2016-07-09 23:00:00 +0000-->
+                                        <!--1395-04-19 23:00:00 +0000-->
                                     </date>
                                     <date key="minDate" timeIntervalSinceReferenceDate="489798000">
-                                        <!--2016-07-09 23:00:00 +0000-->
+                                        <!--1395-04-19 23:00:00 +0000-->
                                     </date>
                                     <date key="maxDate" timeIntervalSinceReferenceDate="662774400">
-                                        <!--2022-01-02 00:00:00 +0000-->
+                                        <!--1400-10-12 00:00:00 +0000-->
                                     </date>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <datePickerElements key="datePickerElements" era="YES" year="YES" month="YES" day="YES"/>
                                 </datePickerCell>
                             </datePicker>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJP-YS-zhv">
@@ -1987,16 +1989,6 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="removeProject:" target="Ol1-fJ-lVN" id="2Ey-hY-J7G"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-sh-pgP">
-                                <rect key="frame" x="170" y="23" width="19" height="19"/>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Dt-wi-aQK">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="Oc9-Iy-I0t" kind="popover" popoverAnchorView="bIY-sh-pgP" popoverBehavior="t" preferredEdge="maxY" id="1em-WM-UQ1"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y93-OZ-SGn">
@@ -2100,7 +2092,7 @@ DQ
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="gt8-ml-iM4">
-                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="210" width="102" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="HuB-B3-xbd">
@@ -2163,7 +2155,7 @@ DQ
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="HgO-SP-qTB">
-                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="210" width="102" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="WDG-ve-7Ck">
@@ -2181,7 +2173,7 @@ DQ
                                     <rect key="frame" x="1" y="0.0" width="102" height="226"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="fc9-lH-iPN" viewBased="YES" id="1Ia-vO-bn6" customClass="SubSystemTable" customModule="ERP_Models" customModuleProvider="target">
+                                        <tableView identifier="subSystemTable" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="fc9-lH-iPN" viewBased="YES" id="1Ia-vO-bn6" customClass="SubSystemTable" customModule="ERP_Models" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="105" height="203"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -2225,7 +2217,7 @@ DQ
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="HMV-XI-It6">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.69042838390712902" horizontal="YES" id="HMV-XI-It6">
                                     <rect key="frame" x="1" y="210" width="102" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -2244,7 +2236,7 @@ DQ
                                     <rect key="frame" x="1" y="0.0" width="102" height="226"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="POX-yY-uwG" viewBased="YES" id="7Bb-wq-i4a" customClass="RequirementTable" customModule="ERP_Models" customModuleProvider="target">
+                                        <tableView identifier="requirementTable" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="POX-yY-uwG" viewBased="YES" id="7Bb-wq-i4a" customClass="RequirementTable" customModule="ERP_Models" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="102" height="203"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -2289,7 +2281,7 @@ DQ
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="FPP-V1-ccN">
-                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="210" width="102" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="GYQ-c9-ZGd">
@@ -2307,7 +2299,7 @@ DQ
                                     <rect key="frame" x="1" y="0.0" width="102" height="226"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nVf-mJ-AeY" viewBased="YES" id="cBp-xv-eUT" customClass="ProductTable" customModule="ERP_Models" customModuleProvider="target">
+                                        <tableView identifier="productTable" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nVf-mJ-AeY" viewBased="YES" id="cBp-xv-eUT" customClass="ProductTable" customModule="ERP_Models" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="102" height="203"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -2352,7 +2344,7 @@ DQ
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="mCu-iQ-cx0">
-                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="210" width="102" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="c27-ya-uXd">
@@ -2364,12 +2356,15 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6Q-5t-Hhf">
+                            <button identifier="addSubSystem" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6Q-5t-Hhf" customClass="AddSystemButtonClass" customModule="ERP_Models" customModuleProvider="target">
                                 <rect key="frame" x="273" y="23" width="19" height="19"/>
                                 <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kGC-cZ-xtD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <segue destination="Oc9-Iy-I0t" kind="popover" popoverAnchorView="m6Q-5t-Hhf" popoverBehavior="t" preferredEdge="maxY" id="CJZ-Sb-PfV"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ob-wJ-pXR">
                                 <rect key="frame" x="293" y="23" width="19" height="19"/>
@@ -2386,9 +2381,21 @@ DQ
                                 <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRefreshFreestandingTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Xka-MS-N7p">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">r</string>
                                 </buttonCell>
                                 <connections>
                                     <action selector="reloadTables:" target="Ol1-fJ-lVN" id="zPF-Sc-lb3"/>
+                                </connections>
+                            </button>
+                            <button identifier="addSystem" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-sh-pgP">
+                                <rect key="frame" x="170" y="23" width="19" height="19"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Dt-wi-aQK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <accessibility identifier="addSystem"/>
+                                <connections>
+                                    <segue destination="Oc9-Iy-I0t" kind="popover" popoverAnchorView="bIY-sh-pgP" popoverBehavior="t" preferredEdge="maxY" id="1em-WM-UQ1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2410,11 +2417,11 @@ DQ
             <objects>
                 <viewController id="K1N-Dy-Q5N" customClass="AddProjectViewController" customModule="ERP_Models" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="FFk-0v-Mud">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="342" height="234"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-yu-UdT">
-                                <rect key="frame" x="20" y="158" width="187" height="22"/>
+                                <rect key="frame" x="180" y="194" width="106" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="Wvz-nA-4YE">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -2422,7 +2429,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJF-n2-Gcx">
-                                <rect key="frame" x="261" y="163" width="21" height="17"/>
+                                <rect key="frame" x="303" y="197" width="21" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="نام:" id="VCt-5a-TNc">
                                     <font key="font" size="13" name=".GeezaProInterface"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -2430,7 +2437,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YdP-2X-gwi">
-                                <rect key="frame" x="20" y="126" width="187" height="22"/>
+                                <rect key="frame" x="181" y="161" width="105" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="Nx7-z9-JEG">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="vnz-18-O5I"/>
                                     <font key="font" metaFont="system"/>
@@ -2439,7 +2446,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Opz-yR-oEK">
-                                <rect key="frame" x="250" y="130" width="34" height="17"/>
+                                <rect key="frame" x="292" y="164" width="34" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="بودجه:" id="3ai-Eg-NPR">
                                     <font key="font" size="13" name=".GeezaProInterface"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -2447,7 +2454,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9i-bf-5ie">
-                                <rect key="frame" x="20" y="89" width="187" height="22"/>
+                                <rect key="frame" x="21" y="162" width="78" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="gvb-Fk-xBm">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="v9c-Ow-B8q"/>
                                     <font key="font" metaFont="system"/>
@@ -2456,7 +2463,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wp1-RE-mVc">
-                                <rect key="frame" x="214" y="92" width="70" height="17"/>
+                                <rect key="frame" x="105" y="162" width="70" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="منابع انسانی:" id="M1u-tj-ld1">
                                     <font key="font" size="13" name=".GeezaProInterface"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -2464,23 +2471,27 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfe-Ur-pJ7">
-                                <rect key="frame" x="18" y="48" width="192" height="26"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="8R4-Cr-yea">
+                                <rect key="frame" x="18" y="191" width="122" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title=" انتخاب مدیر" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="cUw-Oq-B0q" id="8R4-Cr-yea">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="eqW-h8-rOJ"/>
+                                    <menu key="menu" id="eqW-h8-rOJ">
+                                        <items>
+                                            <menuItem title=" انتخاب مدیر" state="on" id="cUw-Oq-B0q"/>
+                                        </items>
+                                    </menu>
                                 </popUpButtonCell>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-oJ-efj">
-                                <rect key="frame" x="228" y="53" width="56" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="مدیر پروژه:" id="k4b-Al-sKN">
+                                <rect key="frame" x="142" y="196" width="29" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="مدیر:" id="k4b-Al-sKN">
                                     <font key="font" size="13" name=".GeezaProInterface"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuZ-rF-CcU">
-                                <rect key="frame" x="122" y="3" width="57" height="32"/>
+                                <rect key="frame" x="143" y="13" width="57" height="32"/>
                                 <buttonCell key="cell" type="push" title="ثبت" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2XT-x8-rve">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".GeezaProInterface"/>
@@ -2492,10 +2503,69 @@ DQ
                                     <action selector="saveProject:" target="K1N-Dy-Q5N" id="659-yL-IfD"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-1m-xfv">
+                                <rect key="frame" x="292" y="128" width="32" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="دسته:" id="1Bd-Xs-V0c">
+                                    <font key="font" size="13" name=".GeezaProInterface"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOT-Ud-zqb">
+                                <rect key="frame" x="73" y="123" width="100" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="6co-eQ-UQE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7n6-Pe-67Y">
+                                <rect key="frame" x="44" y="124" width="21" height="21"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cFp-bI-w7h">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addCategory:" target="K1N-Dy-Q5N" id="3kh-2X-SE9"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEd-80-THy">
+                                <rect key="frame" x="21" y="124" width="21" height="21"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="afD-Jl-7EW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeCategory:" target="K1N-Dy-Q5N" id="Vth-xJ-kiS"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jwb-jE-cCB">
+                                <rect key="frame" x="20" y="49" width="302" height="55"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" placeholderString="توضیحات" drawsBackground="YES" id="B4Z-fC-bCH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7eM-10-qlx">
+                                <rect key="frame" x="178" y="121" width="111" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="انتخاب  دسته" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Miq-cB-kJJ" id="e6O-HD-30R">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="4k2-BB-8X2">
+                                        <items>
+                                            <menuItem title="انتخاب  دسته" state="on" id="Miq-cB-kJJ"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="descriptionInput" destination="jwb-jE-cCB" id="DfG-pq-057"/>
+                        <outlet property="newCategoryButton" destination="7eM-10-qlx" id="8Zq-Rm-ok4"/>
                         <outlet property="newProjectBudget" destination="YdP-2X-gwi" id="lx0-bX-DtC"/>
+                        <outlet property="newProjectCategory" destination="bOT-Ud-zqb" id="o64-sb-J0E"/>
                         <outlet property="newProjectHumanResource" destination="k9i-bf-5ie" id="eYb-PU-mGD"/>
                         <outlet property="newProjectManager" destination="jfe-Ur-pJ7" id="pn0-Us-CkO"/>
                         <outlet property="newProjectName" destination="Bie-yu-UdT" id="RnQ-uv-6wK"/>
@@ -2503,7 +2573,7 @@ DQ
                 </viewController>
                 <customObject id="UdL-GY-aRc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-248" y="2634"/>
+            <point key="canvasLocation" x="-269" y="2651"/>
         </scene>
         <!--Add System View Controller-->
         <scene sceneID="bNa-Fm-Rzl">
@@ -2513,30 +2583,14 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jf-0y-GFn">
-                                <rect key="frame" x="18" y="156" width="229" height="26"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="2Yj-rd-yh8">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="7R3-eT-Tw7"/>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4iu-je-zRK">
-                                <rect key="frame" x="250" y="163" width="32" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="پروژه:" id="IKl-KR-HfS">
-                                    <font key="font" size="13" name=".GeezaProInterface"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-ug-vYI">
-                                <rect key="frame" x="20" y="113" width="260" height="5"/>
+                                <rect key="frame" x="20" y="134" width="260" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-lw-j5s">
-                                <rect key="frame" x="20" y="78" width="224" height="22"/>
+                                <rect key="frame" x="30" y="158" width="224" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" placeholderString="نام سیستم" drawsBackground="YES" id="cen-cp-nKk">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -2544,7 +2598,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9S3-5u-Evv">
-                                <rect key="frame" x="260" y="80" width="22" height="17"/>
+                                <rect key="frame" x="260" y="159" width="22" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="نام:" id="iaq-00-LYB">
                                     <font key="font" size="13" name=".GeezaProInterface"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -2564,10 +2618,18 @@ DQ
                                     <action selector="saveSystem:" target="Oc9-Iy-I0t" id="cvS-gy-593"/>
                                 </connections>
                             </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c17-Ag-MTN">
+                                <rect key="frame" x="30" y="44" width="250" height="84"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" placeholderString="توضیحات" drawsBackground="YES" id="ahA-AZ-UvQ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="projectListButton" destination="6jf-0y-GFn" id="z0W-7b-ZKy"/>
+                        <outlet property="systemDescriptionInput" destination="c17-Ag-MTN" id="INW-6z-lcZ"/>
                         <outlet property="systemNameInput" destination="wZ6-lw-j5s" id="fRH-Tw-kHA"/>
                     </connections>
                 </viewController>
@@ -3095,4 +3157,8 @@ DQ
         <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="NSUser" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KXO-Gl-0CK"/>
+        <segue reference="1em-WM-UQ1"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -72,20 +72,19 @@ class UserViewController: NSViewController {
         var firstname = ""
         var lastname = ""
         var username = ""
-        var password = ""
+        var permission = ""
         
         if let userInfo = user{
             firstname = userInfo.firstName as String
             lastname = userInfo.lastName as String
             username = userInfo.username as String
-            password = userInfo.password as String
-            
+            permission = userInfo.userPermission.title as String
             // now we show them 
             
             self.fnameField.stringValue = firstname
             self.lnameField.stringValue = lastname
             self.unameField.stringValue = username
-            self.titleField.stringValue = password
+            self.titleField.stringValue = permission
         }
     }
 
